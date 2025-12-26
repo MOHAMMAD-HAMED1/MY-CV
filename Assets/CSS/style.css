@@ -1,0 +1,216 @@
+/* الألوان والمتغيرات الأساسية */
+:root {
+    --dark-sidebar: #1e2532; 
+    --accent-color: #00a8ff; 
+    --text-gray: #57606f;
+    --main-text: #2f3542;
+}
+
+/* إعادة ضبط الهوامش لضمان الدقة */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+}
+
+body { 
+    background-color: #f1f2f6; 
+    display: flex; 
+    justify-content: center; 
+    padding: 20px; 
+}
+
+/* الحاوية الرئيسية للـ CV */
+.cv-container {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    display: flex;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* العمود الأيسر - الداكن */
+.sidebar {
+    width: 35%;
+    background-color: var(--dark-sidebar);
+    color: white;
+    padding: 50px 25px;
+}
+
+.sidebar-section { 
+    margin-bottom: 35px; 
+}
+
+.sidebar-title {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.contact-item { 
+    margin-bottom: 12px; 
+    display: flex; 
+    align-items: center; 
+    font-size: 11px; 
+}
+
+.contact-item i { 
+    margin-right: 12px; 
+    color: var(--accent-color); 
+    width: 15px; 
+    text-align: center; 
+}
+
+.contact-item a { 
+    color: white; 
+    text-decoration: none; 
+    word-break: break-all; 
+}
+
+/* أشرطة المهارات */
+.skill-item { 
+    margin-bottom: 12px; 
+}
+
+.skill-name { 
+    font-size: 11px; 
+    margin-bottom: 5px; 
+    display: block; 
+    color: #d1d8e0; 
+}
+
+.skill-bar { 
+    height: 5px; 
+    background: #3d4d63; 
+    border-radius: 3px; 
+    overflow: hidden; 
+}
+
+.skill-progress { 
+    height: 100%; 
+    background: var(--accent-color); 
+}
+
+/* الجزء الأيمن - المحتوى الفاتح */
+.main-content {
+    width: 65%;
+    padding: 50px 40px;
+    color: var(--main-text);
+}
+
+.header { 
+    margin-bottom: 40px; 
+    border-left: 5px solid var(--accent-color); 
+    padding-left: 20px; 
+}
+
+.header h1 { 
+    font-size: 38px; 
+    font-weight: 800; 
+    color: var(--dark-sidebar); 
+    text-transform: uppercase; 
+    line-height: 1.1; 
+}
+
+.header h2 { 
+    font-size: 15px; 
+    color: var(--accent-color); 
+    margin-top: 5px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+}
+
+.main-section { 
+    margin-bottom: 30px; 
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header i { 
+    background: var(--dark-sidebar); 
+    color: white; 
+    width: 28px; 
+    height: 28px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-right: 12px; 
+    font-size: 13px;
+}
+
+.section-header h3 { 
+    font-size: 18px; 
+    text-transform: uppercase; 
+    color: var(--dark-sidebar); 
+    font-weight: 700; 
+}
+
+/* الخط الزمني والنقاط الزرقاء */
+.content-box { 
+    border-left: 2px solid #e2e8f0; 
+    margin-left: 14px; 
+    padding-left: 25px; 
+}
+
+.content-item { 
+    margin-bottom: 20px; 
+    position: relative; 
+}
+
+.content-item::before {
+    content: "";
+    position: absolute; 
+    left: -32.5px; /* تم تعديلها لتتوسط الخط تماماً */
+    top: 5px;
+    width: 12px; 
+    height: 12px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    border: 2px solid white; /* تعطي شكلاً أنظف للنقطة */
+}
+
+.item-title { font-weight: bold; font-size: 15px; color: var(--dark-sidebar); }
+.item-subtitle { color: var(--accent-color); font-weight: 600; font-size: 13px; margin: 2px 0; }
+.item-date { font-size: 11px; color: var(--text-gray); margin-bottom: 5px; font-weight: 600; }
+.item-desc { font-size: 13px; color: var(--text-gray); line-height: 1.5; }
+
+/* الروابط */
+.project-links { 
+    margin-top: 8px; 
+    display: flex; 
+    gap: 6px; 
+    flex-wrap: wrap; 
+}
+
+.project-links a { 
+    font-size: 10px; 
+    color: var(--accent-color); 
+    text-decoration: none; 
+    border: 1px solid var(--accent-color); 
+    padding: 2px 8px; 
+    border-radius: 4px; 
+    transition: 0.3s; 
+    font-weight: 600; 
+}
+
+.project-links a:hover { 
+    background: var(--accent-color); 
+    color: white; 
+}
+
+/* تحسينات الطباعة */
+@media print {
+    body { padding: 0; background: white; }
+    .cv-container { box-shadow: none; width: 100%; border: none; }
+    .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
